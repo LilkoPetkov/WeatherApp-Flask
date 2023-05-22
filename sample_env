@@ -1,0 +1,6 @@
+SECRET_KEY='SECRET_KEY'
+API_KEY="https://home.openweathermap.org/api_keys"
+DB_USER =""
+DB_NAME=""
+DB_PORT=5432
+DB_PASSWORD=""

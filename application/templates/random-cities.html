@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Citites</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+<!--    <div class="cont">-->
+<!--    <div class="container-1">-->
+<!--      <h2>Cities</h2>-->
+<!--      <div class="data-container">-->
+<!--        {% if data %}-->
+<!--          {% for item in data %}-->
+<!--          <p class="generated-data">{{  item }}</p>-->
+<!--          {% endfor %}-->
+<!--        {% endif %}-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div class="cont-5">-->
+<!--    <div class="container-3">-->
+<!--        <h2>Average Temperature</h2>-->
+<!--      {% if avg_temp %}-->
+<!--        <p class="avg-temp-container">-->
+<!--          {{ avg_temp }}-->
+<!--        </p>-->
+<!--        {% endif %}-->
+<!--    </div>-->
+
+<!--    <div class="container-4">-->
+<!--        <h2>Coldest City</h2>-->
+<!--      {% if coldest_city %}-->
+<!--        <p class="coldest-city">-->
+<!--          {{ coldest_city }}-->
+<!--        </p>-->
+<!--        {% endif %}-->
+<!--    </div>-->
+<!--    <form method="POST">-->
+<!--        <input type="submit" value="Back" name="submit_btn" class="btn-outline-secondary">-->
+<!--      </form>-->
+<!--    </div>-->
+
+<!--    </div>-->
+<!--    </div>-->
+            <table>
+            <tr>
+                <th>Name</th>
+                <th>Temperature</th>
+                <th>Humidity</th>
+                <th>Weather</th>
+            </tr>
+                {% for item in data %}
+                <tr>
+                    <td>{{ item[0] }}</td>
+                    <td>{{"%.2f"| format(item[1]) }}°C</td>
+                    <td>{{ item[2] }}%</td>
+                    <td><div id="weather"><img src="/static/icons/{{ item[3] }}.png"></img>{{ item[3] }}</div></td>
+                </tr>
+                {% endfor %}
+            </table>
+
+                <div class="table-cont">
+            <table class="t1">
+            <tr>
+                <th>Cities</th>
+                <th>Average Temperature</th>
+            </tr>
+                {% for item in avg_temp %}
+                <tr>
+                    <td>{{ item[0] }}</td>
+                    <td>{{"%.2f"| format(item[1]) }}°C</td>
+                </tr>
+                {% endfor %}
+            </table>
+
+            <table class="t2">
+            <tr>
+                <th>Coldest City</th>
+                <th>Temperature</th>
+            </tr>
+                <tr>
+                    <td>{{ coldest_city[0] }}</td>
+                    <td>{{"%.2f"| format(coldest_city[1]) }}°C</td>
+                </tr>
+            </table>
+        </div>
+</body>
+</html>

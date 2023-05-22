@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <head>
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>Time</th>
+                <th>Temperature</th>
+                <th>Humidity</th>
+                <th>Weather</th>
+            </tr>
+            {% for item in data["list"] %}
+                <tr>
+                    <td>{{ item["dt_txt"] }}</td>
+                    <td>{{ item["main"]["temp"] }}°C</td>
+                    <td>{{ item["main"]["humidity"] }}%</td>
+                    <td><div id="weather"><img src="/static/icons/{{ item["weather"][0]["main"] }}.png"></img> {{ item["weather"][0]["main"] }}</div></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html> 
