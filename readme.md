@@ -1,7 +1,7 @@
 # Flask Weather App
 
 Flask Weather App with basic frontend setup. The App uses Postgres and has feature for getting the weather forcast for
-specific city, generate data and compare it for 5 random cities from a list of 371 one. The user can create a separate
+specific city next 5 days, 3 hours apart, generate data and compare it for 5 random cities from a list of 371 one. The user can create a separate
 list with cities and get a compared result of the last 10 added. 
 
 # Table of contents
