@@ -9,6 +9,7 @@ list with cities and get a compared result of the last 10 added.
 * [Setup](#Setup)
 * [Technologies](#Technologies)
 * [Contributing](#Contributing)
+* [Screenshots](#Screenshots)
 * [License](#License)
 
 ## Installation
